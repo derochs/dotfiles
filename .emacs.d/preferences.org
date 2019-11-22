@@ -1,0 +1,92 @@
+* Emacs config
+
+** Mac options
+
+#+BEGIN_SRC emacs-lisp
+(setq mac-right-option-modifier nil)
+#+END_SRC
+
+Add TeX
+
+#+BEGIN_SRC emacs-lisp
+(setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin/"))  
+(setq exec-path (append exec-path '("/Library/TeX/texbin/")))
+#+END_SRC
+
+** Package installs
+
+#+BEGIN_SRC emacs-lisp
+  (setq package-list '(
+    sublime-themes
+    org-bullets
+    evil
+    auctex
+    telephone-line
+    all-the-icons
+    pdf-tools
+    typescript-mode
+  ))
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (dolist (package package-list)
+    (unless (package-installed-p package)
+      (package-install package)))
+#+END_SRC
+
+** UI elements
+   
+General UI settings
+
+#+BEGIN_SRC emacs-lisp
+(when window-system
+  (blink-cursor-mode 0)
+  (scroll-bar-mode 0)
+  (tool-bar-mode 0)
+  (tooltip-mode 0))
+#+END_SRC
+
+Font size
+#+BEGIN_SRC emacs-lisp
+#+END_SRC
+
+Set theme to Sublime
+
+#+BEGIN_SRC emacs-lisp
+  (load-theme 'spolsky t)
+#+END_SRC
+
+Telephone Line
+
+#+BEGIN_SRC emacs-lisp
+(telephone-line-mode 1)
+#+END_SRC
+
+** Modes
+
+Evil mode
+
+#+BEGIN_SRC emacs-lisp
+  (use-package evil
+    :ensure t
+    :defer .1 ;; don't block emacs when starting, load evil immediately after startup
+    :init
+    (setq evil-want-integration nil) ;; required by evil-collection
+    (setq evil-search-module 'evil-search)
+    (setq evil-ex-complete-emacs-commands nil)
+    (setq evil-vsplit-window-right t) ;; like vim's 'splitright'
+    (setq evil-split-window-below t) ;; like vim's 'splitbelow'
+    (setq evil-shift-round nil)
+    (setq evil-want-C-u-scroll t)
+    :config
+    (evil-mode))
+#+END_SRC
+
+** Languages
+
+Org
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-hide-emphasis-markers t)
+  (require 'org-bullets)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+END_SRC
