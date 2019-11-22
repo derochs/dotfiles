@@ -28,6 +28,9 @@ Plugin 'alvan/vim-closetag'
 " vim airline
 Plugin 'vim-airline/vim-airline'
 
+" vim airline themes
+Plugin 'vim-airline/vim-airline-themes'
+
 call vundle#end()
 
 " Indentation
@@ -36,9 +39,27 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" set theme
+" set general theme
 syntax on
 colorscheme monokai
+
+" set airline theme"
+let g:airline_theme='minimalist'
+
+" speed up scrolling
+set ttyfast
+
+
+" hide statusline
+set noshowmode
+
+" show buffers on top
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" set wildmenu for listing dirs
+set wildmenu
+set wildmode=longest,list
 
 " autoclosing
 inoremap " ""<left>
