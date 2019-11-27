@@ -31,6 +31,12 @@ Plugin 'vim-airline/vim-airline'
 " vim airline themes
 Plugin 'vim-airline/vim-airline-themes'
 
+" auto pairs
+Plugin 'jiangmiao/auto-pairs'
+
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+
 call vundle#end()
 
 " Indentation
@@ -49,8 +55,11 @@ let g:airline_theme='minimalist'
 " speed up scrolling
 set ttyfast
 
+" toggle nerdtree with C-o
 
-" hide statusline
+map <C-o> :NERDTreeToggle<CR>
+
+"hide statusline
 set noshowmode
 
 " show buffers on top
@@ -60,15 +69,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " set wildmenu for listing dirs
 set wildmenu
 set wildmode=longest,list
-
-" autoclosing
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 
 " tab indentation
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
