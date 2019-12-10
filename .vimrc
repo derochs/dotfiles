@@ -72,3 +72,11 @@ set wildmode=longest,list
 
 " tab indentation
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" font in gui-mode
+if has("gui_running")
+  if has ("gui_win32")
+    set guifont=Consolas:h11:cANSI:qDRAFT
+    set backspace=indent,eol,start
+  endif
+endif
