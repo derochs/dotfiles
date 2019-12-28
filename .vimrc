@@ -62,6 +62,9 @@ map <C-o> :NERDTreeToggle<CR>
 "hide statusline
 set noshowmode
 
+"show line numbers
+set number
+
 " show buffers on top
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod = ':t'
