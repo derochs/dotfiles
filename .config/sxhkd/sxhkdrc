@@ -1,0 +1,84 @@
+#
+# wm independent hotkeys
+#
+
+# quit wm
+ctrl + alt + 4
+	bspc quit
+
+# reload sxhkdrc
+ctrl + Escape
+    pkill -USR1 -x sxhkd; dunstify "Sxhkd configuration reload"
+
+# program launcher
+alt + space
+
+    rofi -show drun
+#    rofi -modi drun -show drun
+#    dmenu
+#    dmenu_run -fn 'Source Code Pro-10'
+#    rofi -show 
+
+super + space
+    urxvt
+
+# audio
+
+XF86AudioMute
+#    amixer -D pulse set Master 1+ toggle
+    ~/.config/dunst/volume.sh mute    
+
+XF86AudioLowerVolume
+#    amixer -D pulse set Master 10%-
+    ~/.config/dunst/volume.sh down
+
+XF86AudioRaiseVolume
+#    amixer -D pulse set Master 10%+
+    ~/.config/dunst/volume.sh up
+
+# brightness
+
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+alt + shift + 3
+    scrot '~/Pictures/screenshot-%Y%m%d.png'
+
+# cycle between nodes hotkeys
+
+alt + {_,shift +} Tab
+    bspc node -f {next,prev}
+
+# move node to hjkl position
+   
+alt + {h,j,k,l}
+    bspc node -s {west,south,north,east} 
+
+# toggle tiled/floating
+alt + {f,t}
+    bspc node -t {floating,tiled}
+# resize tile
+
+super + alt + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top0 -20,right 20 0}
+
+super + alt + shift + {h,j,k,l}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move node to hl desktop
+super + {h,l}
+    bspc node -d {prev,next} -f
+
+alt + w
+    bspc node -c
+
+super + {_,shift +} Tab
+    bspc desktop -f {next,prev}
+
+super + Print
+    scrot ~/Pictures/screenshot-%b%d%H%M%S.png
+#------------------------------
+

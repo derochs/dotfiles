@@ -55,15 +55,14 @@ let g:airline_theme='minimalist'
 " speed up scrolling
 set ttyfast
 
+set number
+
 " toggle nerdtree with C-o
 
 map <C-o> :NERDTreeToggle<CR>
 
 "hide statusline
 set noshowmode
-
-"show line numbers
-set number
 
 " show buffers on top
 let g:airline#extensions#tabline#enabled=1
@@ -83,3 +82,7 @@ if has("gui_running")
     set backspace=indent,eol,start
   endif
 endif
+
+" tmux compatibility
+set background=dark
+set t_Co=256

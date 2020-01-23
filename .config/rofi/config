@@ -1,0 +1,4 @@
+configuration {
+rofi.modi: window,drun
+/*rofi.theme: Monokai*/
+}
