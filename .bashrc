@@ -8,6 +8,6 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-export PATH=$PATH:/home/marcel/.local/bin
-export XDG_CONFIG_HOME=~/.config/
+export PATH=$PATH:$HOME/.local/bin
+export XDG_CONFIG_HOME="$HOME/.config"
 

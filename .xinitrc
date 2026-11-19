@@ -5,7 +5,6 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-xrdb -load ~.Xresources
+[ -f "$userresources" ] && xrdb -merge "$userresources"
 
-$HOME/.config/polybar/launch.sh
-bspwm
+exec bspwm

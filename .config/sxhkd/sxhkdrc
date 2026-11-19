@@ -45,7 +45,7 @@ XF86MonBrightnessDown
     xbacklight -dec 10
 
 alt + shift + 3
-    scrot '~/Pictures/screenshot-%Y%m%d.png'
+    scrot "$HOME/Pictures/screenshot-%Y%m%d-%H%M%S.png"
 
 # cycle between nodes hotkeys
 
@@ -63,7 +63,7 @@ alt + {f,t}
 # resize tile
 
 super + alt + {h,j,k,l}
-    bspc node -z {left -20 0,bottom 0 20,top0 -20,right 20 0}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 super + alt + shift + {h,j,k,l}
     bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
@@ -79,6 +79,6 @@ super + {_,shift +} Tab
     bspc desktop -f {next,prev}
 
 super + Print
-    scrot ~/Pictures/screenshot-%b%d%H%M%S.png
+    scrot "$HOME/Pictures/screenshot-%b%d%H%M%S.png"
 #------------------------------
 

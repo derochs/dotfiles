@@ -11,16 +11,16 @@ Plugin 'VundleVim/Vundle.vim'
 " PLUGINS
 
 " Monokai theme
-Plugin 'git://github.com/crusoexia/vim-monokai.git'
+Plugin 'crusoexia/vim-monokai'
 
 " Java highlighting
 Plugin 'rudes/vim-java'
 
 " Javascript highlighting
-Plugin 'git://github.com/pangloss/vim-javascript.git'
+Plugin 'pangloss/vim-javascript'
 
 " Typescript highlighting
-Plugin 'git://github.com/leafgarland/typescript-vim'
+Plugin 'leafgarland/typescript-vim'
 
 " autoclosing HTML tags
 Plugin 'alvan/vim-closetag'
@@ -41,9 +41,6 @@ call vundle#end()
 
 " Indentation
 filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
 " set general theme
 syntax on
